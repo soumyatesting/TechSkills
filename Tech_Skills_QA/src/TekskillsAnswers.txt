@@ -1,0 +1,108 @@
+1.What page element selectors do you know?
+find_element_by_id.
+find_element_by_name.
+find_element_by_xpath.
+find_element_by_link_text.
+find_element_by_partial_link_text.
+find_element_by_tag_name.
+find_element_by_class_name.
+find_element_by_css_selector.
+
+
+2.Rate your JS knowledge from 0 to 10 (or another language, just indicate)
+Ans: 5
+
+3.Rate your Cypress/Selenium knowledge from 0 to 10
+Ans: Dont know CyPress
+
+4.Use selectors to get a list of all admins
+ <ul class="users_list">
+    		<li class="admin">one</li>
+     		<li class="user">two</li>
+     		<li class="admin">three</li>
+     		<li class="user">four</li>
+   	</ul>
+Ans: //li[@class="admin"]
+or can use driver.findElements(By.xpath("")) and store in a list and iterate
+
+
+
+5.Use selectors to list all users by data attribute name="user"
+<ul class="users_list">
+    		<li class="admin">one</li>
+     		<li name="user"">two</li>
+     		<li class="admin">three</li>
+     		<li name="user">four</li>
+   	</ul>
+Ans: //li[@name="user"]
+or can use driver.findElements(By.xpath("")) and store in a list and iterate
+
+
+
+6.Filter the list by color attribute. The condition is that you first get the complete list of elements and then filter on the attribute. You need to get a list of items with a red marker.
+<ul class="users_list">
+    		<li class="user" color=”red”>test1</li>
+     		<li class="user" color=”green”>test2</li>
+     		<li class="user" color=”red”>test3</li>
+     		<li class="user" color=”green”>test4</li>
+     		<li class="user" color=”red”>test5</li>
+     		<li class="user" color=”green”>test6</li>
+     		<li class="user" color=”green”>test7</li>
+    		<li class="user" color=”red”>test8</li>
+     		<li class="user" color=”green”>test9</li>
+     		<li class="user" color=”red”>test10</li>
+     		<li class="user" color=”green”>test11</li>
+   	</ul>
+Ans: List<WebElement> el = driver.findElements(By.xpath[@color=""];
+for(WebElement e:el){
+String colorfound=e.getAttribute("Color");
+if(colorfound.equals("red")){
+System.out.print("red Found");
+}
+}
+	
+7.What actions for elements do you know?
+action class actions:
+
+doubleClick(): 
+clickAndHold():
+dragAndDrop():
+moveToElement():
+contextClick(): 
+
+Keyboard Actions:
+
+sendKeys(): 
+keyUp():
+keyDown(): 
+
+8.How to get an element using Cypress/Selenium?
+driver.findElement(By.locator);
+
+9.How to work with select in Cypress/Selenium?
+Create a select class and pass the webelemnt. Example as below 
+
+Select countrydropdown = new Select(driver.findElement(By.name("Country")));
+countrydropdown.selectByVisbileText("INDIA");
+countrydropdown.selectByIndex(1);
+etc
+
+
+10.What actions can be applied to an element using Cypress/Selenium?
+doubleClick(): 
+clickAndHold():
+dragAndDrop():
+moveToElement():
+contextClick(): 
+
+Keyboard Actions:
+
+sendKeys(): 
+keyUp():
+keyDown(): 
+11.Does Сypress/Selenium support drag and drop?
+Yes
+12.Does Сypress/Selenium support file uploads? How?
+Yes using Robot class
+or 
+If the elemet has html tag as file we can use send keys and upload any file with the file path.
